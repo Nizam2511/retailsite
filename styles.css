@@ -1,9 +1,31 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-h1 {
-    color: #007bff;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.bg-image {
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header h1 {
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+header p {
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .product {
@@ -13,6 +35,7 @@ h1 {
     margin: 10px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
 }
 
 .product h2 {
@@ -27,4 +50,20 @@ h1 {
 
 button {
     margin-top: 10px;
+}
+
+#cart {
+    display: none;
+}
+
+#cart h2 {
+    margin-top: 40px;
+}
+
+#cart-items {
+    margin-top: 20px;
+}
+
+#payment {
+    margin-top: 40px;
 }

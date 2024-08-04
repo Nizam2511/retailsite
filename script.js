@@ -7,6 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const productContainer = document.getElementById('products');
     const checkoutButton = document.getElementById('checkout');
+    const cartLink = document.getElementById('cart-link');
+    const cartCount = document.getElementById('cart-count');
+    const cartItems = document.getElementById('cart-items');
+    const cartElement = document.getElementById('cart');
+    const paymentElement = document.getElementById('payment');
 
     let cart = [];
 
@@ -24,26 +29,23 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addToCart = function(productId) {
         const product = products.find(p => p.id === productId);
         cart.push(product);
-        alert(`${product.name} added to cart.`);
+        updateCart();
     };
 
-    checkoutButton.addEventListener('click', () => {
-        if (cart.length === 0) {
-            alert('Your cart is empty.');
-            return;
-        }
-
-        const orderDetails = cart.map(product => `${product.name} - $${product.price}`).join('\n');
-        alert(`Your order:\n${orderDetails}`);
-        saveOrder(orderDetails);
-        cart = [];
-    });
-
-    function saveOrder(orderDetails) {
-        const blob = new Blob([orderDetails], { type: 'text/plain' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = 'order.txt';
-        link.click();
+    function updateCart() {
+        cartCount.textContent = cart.length;
+        cartItems.innerHTML = '';
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            li.className = 'list-group-item';
+            li.textContent = `${item.name} - $${item.price}`;
+            cartItems.appendChild(li);
+        });
+        cartElement.style.display = cart.length > 0 ? 'block' : 'none';
     }
+
+    checkoutButton.addEventListener('click', () => {
+        cartElement.style.display = 'none';
+        paymentElement.style.display = 'block';
+    });
 });
