@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+</head>
+<body>
+    <h1>Checkout</h1>
+    <ul>
+        {% for product in products %}
+            <li>{{ product[1] }} - ${{ product[2] }}</li>
+        {% endfor %}
+    </ul>
+    <p>Total: ${{ total }}</p>
+    <form method="POST" action="{{ url_for('complete') }}">
+        <button type="submit">Complete Purchase</button>
+    </form>
+</body>
+</html>
