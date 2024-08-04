@@ -5,25 +5,25 @@ body {
     background-image: url('images/background.jpg'); /* Ensure your background image is set correctly */
     background-size: cover;
     background-position: center;
-    color: #f2f2f2; /* Change this to a lighter color for better visibility */
+    color: #333333; /* Dark gray for body text */
 }
 
 h1, h2, h4 {
-    color: #ffffff; /* White color for headings */
+    color: #092055; /* White for headings */
 }
 
 .card {
-    background-color: rgba(255, 255, 255, 0.8); /* Light background for product cards */
+    background-color: rgba(132, 105, 105, 0.9); /* Slightly opaque white background for product cards */
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow for depth */
 }
 
 .navbar {
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly darker background for navbar */
+    background-color: rgba(83, 60, 60, 0.9); /* Light background for navbar */
 }
 
 .nav-link {
-    color: #000; /* Black color for navbar links for better contrast */
+    color: #000000; /* Black for navbar links */
 }
 
 .container {
@@ -31,12 +31,12 @@ h1, h2, h4 {
 }
 
 .list-group-item {
-    color: #333; /* Darker color for cart items for readability */
+    color: #000000; /* Black for cart items for maximum readability */
 }
 
 .btn-success {
-    background-color: #28a745; /* Green color for success buttons */
-    color: white; /* White color for button text */
+    background-color: #28a745; /* Green for success buttons */
+    color: rgb(156, 19, 19); /* White for button text */
 }
 
 .btn-success:hover {
