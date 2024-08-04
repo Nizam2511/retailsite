@@ -7,7 +7,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-image {
-    background-image: url('images/background.jpg');
+    background-image: url('images/background.jpeg');
     background-size: cover;
     background-position: center;
     height: 300px;
