@@ -1,3 +1,11 @@
+// Initialize cart globally
+let cart = [];
+
+// Load cart items from local storage if available
+if (localStorage.getItem('cart')) {
+    cart = JSON.parse(localStorage.getItem('cart'));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const products = [
         { id: 1, name: 'Product 1', price: 10 },
@@ -6,15 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const productContainer = document.getElementById('products');
-    const checkoutButton = document.getElementById('checkout');
-    const cartLink = document.getElementById('cart-link');
     const cartCount = document.getElementById('cart-count');
     const cartItems = document.getElementById('cart-items');
-    const cartElement = document.getElementById('cart');
-    const paymentElement = document.getElementById('payment');
+    const totalPriceElement = document.getElementById('total-price');
+    const cartDetails = document.getElementById('cart-details');
+    const paymentForm = document.getElementById('payment-form');
+    const paymentMethod = document.getElementById('paymentMethod');
+    const cardDetails = document.getElementById('card-details');
+    const upiDetails = document.getElementById('upi-details');
 
-    let cart = [];
-
+    // Display products
     products.forEach(product => {
         const productElement = document.createElement('div');
         productElement.className = 'product col-md-4';
@@ -26,26 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
         productContainer.appendChild(productElement);
     });
 
+    // Update cart display on load
+    updateCart();
+
     window.addToCart = function(productId) {
         const product = products.find(p => p.id === productId);
         cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
         updateCart();
     };
 
     function updateCart() {
-        cartCount.textContent = cart.length;
-        cartItems.innerHTML = '';
-        cart.forEach(item => {
-            const li = document.createElement('li');
-            li.className = 'list-group-item';
-            li.textContent = `${item.name} - $${item.price}`;
-            cartItems.appendChild(li);
-        });
-        cartElement.style.display = cart.length > 0 ? 'block' : 'none';
-    }
-
-    checkoutButton.addEventListener('click', () => {
-        cartElement.style.display = 'none';
-        paymentElement.style.display = 'block';
-    });
-});
+        cartCount.textContent = cart
