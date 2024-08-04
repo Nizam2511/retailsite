@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="cart-link">Cart (<span id="cart-count">0</span>)</a>
+                    <a class="nav-link" href="cart.html">Cart (<span id="cart-count">0</span>)</a>
                 </li>
             </ul>
         </div>
@@ -34,30 +34,6 @@
         <div id="products" class="row">
             <!-- Products will be dynamically added here -->
         </div>
-        <div id="cart" class="mt-5">
-            <h2>Your Cart</h2>
-            <ul id="cart-items" class="list-group"></ul>
-            <button id="checkout" class="btn btn-primary mt-4">Proceed to Checkout</button>
-        </div>
-    </div>
-
-    <div id="payment" class="container my-5" style="display: none;">
-        <h2>Payment</h2>
-        <form>
-            <div class="form-group">
-                <label for="cardNumber">Card Number</label>
-                <input type="text" class="form-control" id="cardNumber" placeholder="Enter card number">
-            </div>
-            <div class="form-group">
-                <label for="expiryDate">Expiry Date</label>
-                <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY">
-            </div>
-            <div class="form-group">
-                <label for="cvv">CVV</label>
-                <input type="text" class="form-control" id="cvv" placeholder="CVV">
-            </div>
-            <button type="submit" class="btn btn-success">Pay Now</button>
-        </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
