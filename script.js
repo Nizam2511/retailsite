@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     products.forEach(product => {
         const productElement = document.createElement('div');
-        productElement.className = 'product';
+        productElement.className = 'product col-md-4';
         productElement.innerHTML = `
             <h2>${product.name}</h2>
             <p>Price: $${product.price}</p>
-            <button onclick="addToCart(${product.id})">Add to Cart</button>
+            <button class="btn btn-success" onclick="addToCart(${product.id})">Add to Cart</button>
         `;
         productContainer.appendChild(productElement);
     });
