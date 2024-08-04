@@ -1,69 +1,39 @@
 body {
     font-family: 'Poppins', sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/background.jpg'); /* Change this to your desired background image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background */
+    color: white; /* Change text color to white for better visibility */
 }
 
 .bg-image {
-    background-image: url('images/background.jpeg');
+    background-image: url('images/background.jpg'); /* If you have a specific header image */
     background-size: cover;
     background-position: center;
-    height: 300px;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    padding: 50px 0;
 }
 
-header h1 {
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+h1, h2, h4 {
+    color: #fff; /* Make headings white for better contrast */
 }
 
-header p {
-    font-weight: 300;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+.card {
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for product cards */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }
 
-.product {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 10px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: white;
+.navbar {
+    background-color: rgba(255, 255, 255, 0.8); /* Light background for navbar */
 }
 
-.product h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+.nav-link {
+    color: #000; /* Navbar link color */
 }
 
-.product p {
-    font-size: 1.2em;
-    color: #333;
-}
-
-button {
-    margin-top: 10px;
-}
-
-#cart {
-    display: none;
-}
-
-#cart h2 {
-    margin-top: 40px;
-}
-
-#cart-items {
+.container {
     margin-top: 20px;
-}
-
-#payment {
-    margin-top: 40px;
 }
